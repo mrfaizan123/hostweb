@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate to The Power of One</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            background: linear-gradient(to right, #1d2671, #c33764);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ffeb3b;
+        }
+
+        .quote {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #ffcc80;
+            animation: fade 10s infinite;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px 20px;
+            background-color: #4caf50;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #388e3c;
+        }
+
+        #confirm-button {
+            margin-top: 15px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            input {
+                font-size: 14px;
+            }
+        }
+
+        @keyframes fade {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2> <a  href="index.html" style="color: rgb(253, 232, 42); text-decoration: none;">Home</a></h2>
+        <a href="qrcode.html" style="color: white;text-decoration: none; cursor: pointer;">
+            QRCODE & UPI
+        </a>
+        <br>
+        <h1>"The Power of One"</h1>
+        <div class="quote" id="quote">
+            "No act of kindness, no matter how small, is ever wasted."
+        </div>
+        <p>Your small contribution can bring a big change. Help us provide food, education, and healthcare to those in need.</p>
+        <p>Enter the amount you'd like to donate:</p>
+        <input type="number" id="donation-amount" placeholder="₹1" min="1" />
+        <p>Click the button below to donate via UPI:</p>
+        <button id="donate-now-button" onclick="donateViaUPI()">Donate Now</button>
+
+        <p>After completing your payment, click the confirmation button below:</p>
+        <button id="confirm-button" onclick="confirmDonation()" disabled>Confirm Donation</button>
+    </div>
+
+    <script>
+        // Array of motivational quotes
+        const quotes = [
+            "No act of kindness, no matter how small, is ever wasted.",
+            "Giving is not just about making a donation. It is about making a difference.",
+            "We make a living by what we get, but we make a life by what we give.",
+            "Happiness doesn’t result from what we get, but from what we give."
+        ];
+
+        // Function to update quote every 5 seconds
+        setInterval(() => {
+            const quoteElement = document.getElementById('quote');
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            quoteElement.textContent = randomQuote;
+        }, 4000);
+
+        // Function to redirect to UPI payment app with the donation amount
+        function donateViaUPI() {
+    const donationAmount = document.getElementById('donation-amount').value;
+    if (donationAmount && donationAmount > 0) {
+        const upiURL = `upi://pay?pa=8810743304@ybl&pn=The Power of One&am=${donationAmount}&cu=INR&tn=Thank you for donating`;
+        window.location.href = upiURL;  
+
+        setTimeout(() => {
+            document.getElementById('confirm-button').disabled = false;
+        }, 5000);  // 3 seconds delay
+    } else {
+        alert('Please enter a valid donation amount.');
+    }
+}
+
+        // Confirm Donation Function
+        function confirmDonation() {
+            const donationAmount = parseInt(document.getElementById('donation-amount').value);
+            if (isNaN(donationAmount) || donationAmount <= 0) {
+                alert('Invalid donation amount.');
+                return;
+            }
+
+            // Update total donations in localStorage
+            let totalDonations = localStorage.getItem('totalDonations');
+            totalDonations = totalDonations ? parseInt(totalDonations) : 0;
+            const newTotal = totalDonations + donationAmount;
+            localStorage.setItem('totalDonations', newTotal);
+
+            alert('Thank you for confirming your donation!');
+
+            // Disable the confirm button
+            document.getElementById('confirm-button').disabled = true;
+
+            // Redirect to the next page
+            setTimeout(() => {
+                window.location.href = "index.html"; // Replace with your profile page link
+            }, 500);
+        }
+    </script>
+</body>
+</html>

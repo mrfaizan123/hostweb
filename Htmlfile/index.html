@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Stylee/style1.css">
+ 
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>   
+    <title>NGO</title>
+    </head>
+<body>
+    
+<div class="fullContainer banner" id="homeSection">
+<header id="navbar">
+    <div class="logo">
+    <img id="logoimg" src="https://tse2.mm.bing.net/th?id=OIP.J8CBo62eQ-ITzrpLX9gjkQHaEU&pid=Api&P=0&h=180" alt="logo">
+    </div>
+    <button id="menuToggle" onclick="toggleMenu()">☰</button>
+        <nav>
+            <ul>
+                <li><a href="#homeSection">Home</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <!-- <li><a href="http://localhost/Donation_app/php/index.php#images-section">See help</a></li> -->
+                <li><a href="../php/index.php#images-section">Updates</a></li>
+                <!-- <li><a href="#programSection">Program</a></li> -->
+                <li><a href="javascript:void(0)" onclick="showLoginForm()">Join Us</a></li>
+                <li><a href="javascript:void(0)" onclick="showUserProfile()" style="margin-right: 50px;">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+<div id="background-container"></div>
+  <div id="container1">
+      <h4>Your Generosity Can Save Lives</h4>
+      <p style="font-size: 18px; text-shadow: 1px 1px 5px grey ;color:white  ; font-weight: bold;">Be a Hero, Change Lives Today | Your Kindness is Someone's Lifeline | Together, We Can Save Lives | Every Gift Makes a Difference | Compassion Can Heal the World | Donate Just One Rupee, Transform Lives | Your Support Brings Hope | Small Acts, Big Impacts | Saving Lives Starts With You | Your Generosity Changes Futures!</p>
+      <a href="payment.html"> 
+      <button class="donate-btn" > Please donate.</button>
+      <a href="javascript:void(0)"> 
+      <button class="donate-btn" onclick="showRemind()"> Remind Me.</button>
+    </a>
+    </div>
+  </div>  
+<div>
+    <div id="remind-form" class="remind-form">
+        <div class="remind-container">
+            <button class="close3-btn" onclick="closeRemindForm()">X</button>
+            <form id="userForm" method="POST" action="../php/number.php" onsubmit="handleFormSubmit1(event)">
+                <label for="mob" id="n" style="font-size: 20px; font-weight: 500;"> Enter Mobile Number:</label>
+                <input type="text" id="mobile_number" name="num" required><br>
+                <button type="submit">Submit</button>
+            </form>
+          
+        </div>
+       
+    </div> 
+
+<section class="fullContainer" id="aboutSection">
+    <div>
+        <h2 class="sectionTitle" style="margin-top: -30px;">Why donate</h2>
+        <P style="font-size: 19px; font-weight: 300; text-shadow: 1px 1px 5px grey; text-align: justify; margin: 0 20px; padding: 0 20px;"> Donating is not just about giving money; it's about sharing a piece of your heart. Every small contribution can change a life, bringing hope to those who feel forgotten. It’s a reminder that compassion knows no boundaries, and every act of kindness matters. When you donate, you’re not just providing resources; you're offering a future, a chance, and a smile. In a world full of uncertainty, your generosity brings light to those in need. It’s about lifting others up, making sure no one has to face struggles alone. Your donation could be the turning point in someone’s life, a moment of relief and support. It’s the bridge between despair and hope, transforming hardship into strength. Each dollar, each gesture, is a step towards a kinder, more caring world. By donating, you remind us all that we’re connected, and together, we can make the world a better place.</P>
+        <div class="cards">
+            <div class="donationBox">
+                <img src="../images/img2_s.jpeg" class="donation-img">
+                <div class="Title">Donate for Education</div>
+                <p>Your donation helps provide education, giving children the opportunity to build a better tomorrow.</p>
+            </div>
+            <div class="volunteerBox">
+                <img src="../images/img5beggar.webp" class="donation-img">
+                <div class="Title">From Streets to Dreams</div>
+                <p>Not Just Charity, But Change: Transforming Lives of Child Beggars.</p>
+            </div>
+            <div class="scholarshipBox">
+                <img src="../images/img4w.avif" class="donation-img">
+                <div class="Title">Safe Water, Better Lives</div>
+                <p>Your donation provides safe water, improving health and giving hope to communities in need.</p>
+            </div>
+            <div class="scholarshipBox">
+                <img src="../images/img3f.jpg" class="donation-img">
+                <div class="Title">Share a Meal, Share Hope</div>
+                <p>Your donations provide meals to those in need, helping fight hunger and bring hope.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<h2 class="new1Title">Programs</h2>
+    <p style="font-size: 19px; font-weight: 300; text-shadow: 1px 1px 5px grey; margin: 10px 0px 0 20px; padding: 0 20px; text-align: justify;">The donation program focuses on creating lasting change for those in need. Food donations provide nutritious meals to hungry families, ensuring they have the strength to live healthier lives. Water donations bring clean, safe drinking water to communities lacking access, improving health and well-being. Education donations help children in underprivileged areas access the learning they deserve, opening doors to brighter futures. Donations for child beggars empower them with care, education, and opportunities to break the cycle of poverty. Health initiatives provide medical care and resources to those suffering from illness or injury. Each donation, no matter how small, has the power to make a huge impact. Together, we can create a world where no one is left behind. Support transforms lives, bringing hope and opportunity to communities in need. Join in making a difference today.</p>
+    <div class="imgbox" id="programSection">
+        <div class="box">
+            <h2>Fuel Dreams,Fund Education</h2>
+            <div class="image" style="background-image: url('../images/img2_s.jpeg');"></div>
+            <div class="text">Your donations can sponsor tuition, books, and resources for talented students from underprivileged backgrounds. By funding scholarships or supporting educational NGOs, you empower them to achieve their dreams and contribute to society. Every contribution is a step towards nurturing bright minds and building a brighter future for all."     
+        </div>
+        <a href="section.html"> 
+        <button id="r">Read more</button>
+       </a>
+         </div>
+         
+        <div class="box">
+            <h2>One Meal,Endless Kindness</h2>
+            <div class="image" style="background-image: url('../images/img3f.jpg');"></div>
+            <div class="text">Every human deserves a meal and dignity. Helping the poor by providing food can transform lives and spread hope. Together, we can combat hunger and build a compassionate society. A small effort from you can create a big impact—let's feed the needy and inspire humanity!"</div>
+            <a href="section.html"> 
+            <button id="r">Read more</button>
+        </a>
+        </div>
+        <div class="box">
+            <h2>Donate Wisely,Shape a Future</h2>
+            <div class="image" style="background-image: url('../images/img5beggar.webp');"></div>
+            <div class="text">
+                Money donations can help transform lives if used effectively. Support organizations that provide food, education, and shelter for children, breaking the cycle of begging. Ensure your contributions empower them with opportunities rather than temporary relief. A small act of generosity can pave the way for a brighter tomorrow!"</div>
+                <a href="section.html"> 
+                
+                <button id="r">Read more</button>
+            </a>
+            </div>
+        <div class="box" id="b1">
+            <h2>Health&Medical Aid Program</h2>
+            <div class="image" style="background-image: url('../images/healthaid.png');"></div>
+            <div class="text">
+                Our NGO is dedicated to providing health and medical aid to those in need, ensuring no one faces illness alone. We aim to offer free medical check-ups, essential treatments, and support for those who can't afford it. Together, we can make a difference and bring hope to every life.
+            </div>
+           <a href="section.html"> 
+            <button id="r">Read more</button>
+        </a>
+        </div>
+    </div>
+<div class="feature">
+
+    <h1 class="newTitle">Empower Through Education: Build a Better Tomorrow</h1>
+    <br>
+    <p style="font-size: 19px;margin: -50px 20px -50px 20px; text-shadow: 1px 1px 5px grey; text-align: justify;">Money donations can provide scholarships to underprivileged students, giving them the opportunity to attend school. Donations fund necessary school supplies, books, and uniforms, removing barriers to education. They help build classrooms and provide safe learning environments for children. Donations can support teachers by providing training and resources to enhance their teaching methods. With your help, children in remote areas can gain access to quality education, setting the foundation for a brighter future. Donations also fund technology to ensure students are prepared for a digital world. By donating, you open doors to a world of opportunities. Every penny helps break the cycle of poverty through education. Your support empowers future leaders, innovators, and changemakers. Together, education can change the world.</p>
+</div>
+<section class="education" id="educationSecion">
+    <video  controls class="videoPlayer">
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video
+    </video>
+    <div class="container">
+        <!-- <div class="sectionTitle">Education</div> -->
+        <div class="educationContainer">
+            <h3>
+                Education Is Essential for <br><strong> BETTER FUTUTRE</strong>
+            </h3>
+            <a href="Education.html"> 
+            <button >Read More</button>
+        </a>
+        </div>
+    </div>
+    <br>
+</section>
+<br>
+<!-- Gallery section -->
+
+ <section class="gallery" id="gallerySection">
+    <div class="sectionTitle" style="margin-top: -50px; font-weight: bolder; font-size: 42px;">Gallery</div>
+<div class="container">
+    
+    <div class="galleryContainer">
+        <div class="item">
+            <span class="title"> Image Title</span>
+            <img src="../imagesimg1.jpg" alt="">
+        </div>
+        <div class="item">
+            <span class="title"> Image Title</span>
+            <img src="../images/img2_s.jpeg" alt="">
+        </div>
+        <div class="item">
+            <span class="title"> Image Title</span>
+            <img src="../images/img3f.jpg" alt="">
+        </div>
+        <div class="item">
+            <span class="title"> Image Title</span>
+            <img src="../images/img4w.avif" alt="">
+        </div>
+        <div class="item">
+            <span class="title"> Image Title</span>
+            <img src="../images/img5beggar.webp" alt="">
+        </div>
+        <div class="item">
+            <span class="title"> Image Title</span>
+            <img src="../imagesimg6.avif" alt="">
+        </div>
+        <div class="item">
+            <span class="title"> Image Title</span>
+            <img src="../images/img7c.jpg" alt="">
+        </div>
+        <div class="item">
+            <span class="title"> Image Title</span>
+            <img src="../images/image8.png" alt="">
+        </div>
+        <div class="item">
+            <span class="title"> Image Title</span>
+            <img src="../images/image9.png" alt="">
+        </div>
+        <div class="item">
+            <span class="title"> Image Title</span>
+            <img src="../images/image10.png" alt="">
+        </div>
+        <div class="item">
+            <span class="title"> Image Title</span>
+            <img src="../images/image11.png" alt="">
+        </div>
+        <div class="item">
+            <span class="title"> Image Title</span>
+            <img src="../images/image12.png" alt="">
+        </div>
+        <div class="item">
+            <span class="title"> Image Title</span>
+            <img src="../images/image13.png" alt="">
+        </div>
+        <div class="item">
+            <span class="title"> Image Title</span>
+            <img src="../images/image14.png" alt="">
+        </div>
+    </div>
+</div>
+ </section>
+ <h1 class="newTitle">Your Compassion Can Save a Life: Donate Today</h1>
+ <p style="font-size: 19px;margin: -45px 10px 0 10px; text-shadow: 1px 1px 5px grey; text-align: justify;"> Every donation you make carries the power to save a life. It brings hope to the hopeless and light to those in darkness. Your generosity can provide food for the hungry, clean water for the thirsty, and medical care for the sick. With each contribution, you give someone a chance to survive and thrive. Your kindness helps children escape the dangers of poverty and creates a future filled with opportunity. Donations transform lives, offering not just survival, but a sense of dignity and belonging. In a world full of challenges, your support makes all the difference. You have the power to ease pain, restore health, and provide education that changes futures. Together, we can make a lasting impact on those who need it most. Join in today to save lives and create a brighter tomorrow.</p>
+  <section class="join" id="joinSection">
+   <img src="../images/edu.png">
+    <div class="container">
+        <div class="joinTitle"></div>
+    </div>
+    <button href="javascript:void(0)"class="joinNow"onclick="showLoginForm()" >Join Us</button>
+  </section>
+ <button id="dark" class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button> 
+ <footer>
+   <div class="footer-container" id="contact" >
+     <div class="footer-column">
+       <h3>About Us</h3>
+       <p>Transforming lives with food, water, education, and healthcare support for those in need. Join us in creating hope.</p>
+     </div>
+
+     <div class="footer-column">
+       <h3>Quick Links</h3>
+       <ul> 
+      <li> <a href="#homeSection">Home</a></li> 
+       <li><a href="#aboutSection">Why donate</a></li>
+       <li><a href="#programSection">Program</a></li>
+      <li><a href="#educationSecion">Donate</a> </li> 
+      <li> <a href="#gallerySection">Gallery</a></li> 
+    </ul>
+    </div>
+ 
+     <div class="footer-column">
+       <h3>Contact Info</h3>
+       <p>📍 Address: 123 Charity Street, Hope City</p>
+       <p>📞 Phone: +918810743304</p>
+       <p>✉️ Email: umohdfaizan@gmail.com</p>
+       <div class="social-icons">
+         <a href="#">🔵</a>
+         <a href="#">🐦</a>
+         <a href="#">📷</a>
+         <a href="#">🔗</a>
+       </div>
+     </div>
+     <div class="footer-column">
+       <h3>Leave a Message</h3>
+       <form class="message-form" action="../php/messag.php" method="POST">
+         <textarea name="user_message" placeholder="Write your message here..." required></textarea>
+         <button type="submit">Send Message</button>
+        
+       </form>
+      
+    <a href="users.html">
+     <button id="but1"style="margin-top: 50px; width: 100%;">See Logged People</button>
+    </a>
+    </div>
+   <div class="footer-bottom">
+     <p>© 2025 Charity Organization. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+   </div>
+ </footer>
+ <div id="login-form" class="login-form">
+    <div class="form-container">
+        <button class="close-btn" onclick="closeLoginForm()">X</button>
+        <form id="userForm" method="POST" action="../php/submit.php" onsubmit="handleFormSubmit(event)">
+            <label for="name" id="n">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit" id="sub">Register</button>
+        </form>
+      
+    </div>
+   
+</div> 
+
+ <div id="profile-box" class="profile-box">
+    <div class="profile-container">
+        <button class="close1-btn" onclick="closeUserProfile()">X</button>
+        <h2>User Profile</h2>
+        <hr>
+        <p id="n">Name:<span style="margin-left: 10px;color: blue; text-transform: capitalize;"  id="profile-name"> </span></p>
+        <p>Status : <span style="margin-left: 5px;" id="s"> </span></p>
+        <p>Active Users: <span id="user_count" class="count" style="font-size: 18px; color: rgb(18, 18, 255); font-weight: bold;">0</span></p> 
+        <p>Total Donation: <span style="margin-left: 5px; color: green;"id="result">  </span></p>
+        <p>Rank: <span style="margin-left: 5px;" id="level"> </span></p>
+        <!-- Circular Progress with lines -->
+        <div class="circular-progress" id="circular-progress">
+            <div class="lines-container" id="lines-container"></div>
+
+            <div class="circle">
+                <div class="level-label" id="level-label">Low</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="modal" id="donateModal">
+    <div class="modal-content">
+        <h2 style="font-size: 20px; font-weight: bold;" >Donate</h2>
+        <p style="font-size: 15px; font-weight: bold;">Enter the amount you wish to donate:</p>
+        <input type="number" id="amount" placeholder="Enter amount" id="donationAmount">
+        <div>
+            <button id="submitBtn" onclick="show()">Donate</button>
+            <button class="close2-btn" id="closeModal">Cancel</button>
+        </div>  -->
+</body>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<script src="../javascript/script1.js"></script>
+</html>
+
+
+
+
+

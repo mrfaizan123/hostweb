@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Program</title>
+    <style>
+   
+   html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #29374f;
+    color: #333;
+    overflow-x: hidden; /* Fix for horizontal scroll issue */
+}
+
+nav {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+header {
+    position: relative;
+    line-height: 2;
+    background: linear-gradient(50deg, #0c0c0c, #010a5c);
+    padding: 15px 0;
+    height: 65px;
+    text-align: center;
+}
+
+header nav a {
+    color: rgb(254, 6, 196);
+    margin: 0 30px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #ffd700;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('../images/hero1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px; /* Adjusted for better responsiveness */
+    
+    overflow: hidden;  
+    padding: 150px;
+}
+
+.hero1,
+.hero2,
+.hero3 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    /* width: 100%; */
+    margin-top: -25px;
+    overflow: hidden;
+}
+
+.hero1 {
+    background-image: url('../images/hero2.png');
+    min-height: 250px;
+   
+}
+
+.hero2 {
+    background-image: url('../images/hero3.png');
+    min-height: 250px;
+}
+
+.hero3 {
+    background-image: url("https://statustown.com/wp-content/uploads/englishstatusimages/Charity-Quotes-12287.jpg");
+    min-height: 350px;
+}
+
+.content {
+    padding: 40px 10%;
+    background: white;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.content h2 {
+   
+    font-size: 38px;
+    margin-bottom: 20px;
+    text-align: center;
+    background: linear-gradient(90deg, #007BFF, #FF00FF, #00FFFF);
+    background-size: 300%; 
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin: 15px 0;
+    animation: gradientShift 4s infinite; 
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+}
+
+
+
+
+
+
+
+
+
+.content p {
+    font-size: 20px;
+    line-height: 1.6;
+    text-shadow: 0px 0px 5px rgb(199, 191, 191);
+    text-align: justify;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: rgb(229, 242, 242);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 6px rgb(158, 158, 158);
+    width: calc(33% - 20px);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgb(81, 81, 255);
+}
+
+.card h3 {
+    
+    margin-top: 15px;
+    font-size: 22px;
+
+
+background: linear-gradient(90deg, yellow, #FF00FF, #ff0004);
+    background-size: 300%; 
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin: 15px 0;
+    animation: gradientShift 4s infinite; 
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+}
+
+
+
+
+
+
+
+.card p {
+    font-size: 16px;
+    color: #666;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+footer {
+    background: linear-gradient(50deg, #0c0c0c, #000637);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+.food img,
+.acces img,
+.health img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1124px) {
+    nav {
+        position: static;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 60%;
+        height: auto;
+    }
+.hero{
+    min-height: 100px;
+    padding: auto;
+}
+    
+    .hero1,
+    .hero2,
+    .hero3 {
+        min-height: 200px;
+        
+        /* width: auto;  */
+    } 
+
+}
+
+@media (max-width: 768px) {
+    header nav a {
+        font-size: 16px;
+        margin: 0 10px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .hero {
+        min-height: 230px;
+        padding: 20px;
+    }
+
+    .card {
+        width: 90%;
+        margin-bottom: 20px;
+        
+    }
+
+    
+    .hero1,
+    .hero2,
+    .hero3 {
+        min-height: 200px;
+        
+    } 
+}
+
+@media (max-width: 484px) {
+    header nav a {
+        font-size: 14px;
+        margin: 0 5px;
+    }
+
+    .content h2 {
+        font-size: 24px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    .card img {
+        height: auto;
+    }   
+
+    .hero{
+        min-height: 100px;
+        padding: 20px;
+       
+    }
+    .hero1,
+    .hero2,
+    .hero3 {
+        min-height: 100px;
+        padding: 10px;
+        /* width: auto; */
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#Education">Education</a>
+            <a href="#Food">Food</a>
+            <a href="#Health">Health</a>
+            <a href="#Beggers">Beggers</a>
+            <a href="payment.html">Donate</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2></h2>
+    </div>
+
+    <div class="content" id="Education">
+        <h2>About Our Program: <span style="color: rgb(34, 34, 255); font-size: 27px;">EDUCATION</span></h2>
+        <p style="font-size: 21px;">The Education Program is dedicated to bridging the educational gap for underprivileged students. Our mission is to provide access to quality education and ensure every student has the tools to realize their potential. Through donations, we offer scholarships, digital learning tools, and essential resources to those who need them most. We employ advanced educational technologies, including AI-driven personalized learning, e-learning modules, and virtual classrooms, to make education engaging, inclusive, and effective.</p>
+        <p style="font-size: 21px;">We are committed to making a lasting impact through mentorship programs that connect students with professionals, guiding them toward academic success and personal growth. Your contributions empower us to transform the future for these students. Together, we are shaping the next generation of innovators, leaders, and change-makers.</p>
+    </div>
+
+    <div class="content">
+        <h2>How We Make an Impact</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="../images/access.png" alt="Education Access">
+                <h3>Providing Access</h3>
+                <p>We partner with schools to deliver quality education and digital learning tools to underserved communities.</p>
+            </div>
+            <div class="card">
+                <img src="../images/scholar.png" alt="Scholarships">
+                <h3>Offering Scholarships</h3>
+                <p>We provide scholarships to talented students, helping them overcome financial barriers and achieve academic excellence.</p>
+            </div>
+            <div class="card">
+                <img src="../images/skill.png" alt="Skill Development" id="img1">
+                <h3>Skill Development</h3>
+                <p>Our programs include career-oriented training, empowering students to succeed in their professional journeys.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>Using Educational Technology</h2>
+        <h3 style="font-size: 21px;">Technology is at the heart of our initiative to bridge educational gaps. By integrating modern tools and platforms, we provide students with access to:</h3>
+        <ul>
+            <li><strong> Skill-Based Education for Adults:</strong>Empower adults with skills, creating brighter futures and economic independence.</li>
+            <br>
+            <li><strong> Virtual Mentorship Programs:</strong>Connect students with mentors, opening doors to opportunities and growth.</li>
+            <br>
+            <li><strong>Education through Gamification: </strong>Make learning exciting, engaging, and fun for lifelong knowledge retention.</li>
+            <br>
+            <li><strong>Education Through Virtual Reality (VR):</strong>Transport students to immersive worlds for hands-on, dynamic learning experiences.</li>
+            <br>
+            <li><strong>Crowd-Source Curriculum Development:</strong>Co-create education with community, ensuring relevant, impactful, and inclusive content.</li>
+            <br>
+            <li><strong> Future Leader Ambassador Program:</strong>Train students as leaders to advocate and inspire change in communities.</li>
+        </ul>
+        <p style="font-size: 21px;">With these technologies, we aim to inspire curiosity, foster creativity, and equip students with the skills they need to thrive in a digital world. Together, we can harness technology to create a brighter, more inclusive future for all.</p>
+   <div class="acces">
+    <img src="../images/access.png" width="1000px"height="550px";>
+   </div>
+   
+    </div>
+    <div class="hero1">
+    </div>
+
+    <div class="content" id="Food">
+        <h2>About Our Program: <span style="color: rgb(34, 34, 255); font-size: 27px;">FOOD</span></h2>
+        <p style="font-size: 21px;">Food is the foundation of life, yet millions of people continue to struggle with hunger and malnutrition every day. According to the World Health Organization, nearly 9 million people die every year due to hunger and malnutrition—around 25,000 deaths each day. In India, 35.5% of children under 5 suffer from stunting (low height for their age), and 16.6% of the population faces malnutrition.</p>
+        
+      <ul>  <h3>Our NGO is committed to addressing this crisis by implementing:</h3>
+        <li> <strong> Smart Farming:</strong> Using modern agricultural technologies to increase food production.</li>
+        <li><strong>Food Distribution:</strong> Ensuring timely delivery of food to areas in need.</li>
+        <li><strong>Community Education:</strong> Raising awareness about nutrition and hygiene.</li>
+    </ul> 
+        <p style="font-size: 21px;">Our goal is to ensure that no one goes to bed hungry and that every child leads a healthy life. With your support, we can make this mission a reality..</p>
+    </div>
+
+    <div class="content">
+        <h2>How We Make an Impact</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="../images/img5beggar.webp" alt="beggers">
+                <h3>From Streets to Dreams</h3>
+                <p>Transforming struggles into hope, pain into strength, despair into courage, and dreams into reality through compassion and care</p>
+            </div>
+            <div class="card">
+                <img src="../images/image8.png" alt="childfood">
+                <h3>Share a Meal, Share Hope</h3>
+                <p>Your donations provide meals to those in need, helping fight hunger and bring hope..</p>
+            </div>
+            <div class="card">
+                <img src="../images/image15.png" alt="Nourishing Families, Brightening Futures">
+                <h3>Nourishing Families, Brightening Futures</h3>
+                <p>Feeding families,empowering children,building hope,brightening futures,creating opportunities,supporting education.</p>
+            </div>
+        </div>
+    </div>
+
+     <div class="content">
+
+        <div class="food">
+
+        <img src="../images/food.webp" height="450px" width="1000px ">
+    </div>
+</div>
+    <div class="hero2">
+    </div>
+
+
+    <div class="content" id="Health">
+        <h2 >About Our Program: <span style="color: rgb(34, 34, 255); font-size: 27px;"> HEALTH</span></h2>
+        <p style="font-size: 21px;">In our society, many individuals battling life-threatening diseases like cancer, heart disease, kidney failure, and neurological disorders cannot afford the treatment they urgently need. Our NGO seeks to change this by providing financial support and healthcare solutions to ensure everyone has a fair chance at life.
+            When severe illnesses strike, the overwhelming medical bills can leave patients with no time to seek funds. That's where our NGO steps in to bridge the gap between life and death.
+            We will raise funds through donations to cover medical expenses, offer free healthcare camps and consultations, and partner with hospitals for discounted or free services. By building a network of volunteer doctors and collaborating with alternative medicine providers, we aim to provide innovative, affordable healthcare.
+            Globally, 18 million people die annually from treatable diseases due to lack of healthcare access. In India, 1.7 million cancer patients are diagnosed each year, but many cannot afford treatment. Over 500 people die daily from heart disease, unable to afford necessary care.
+            Your contribution can save lives and offer hope to families in need. Join us in making healthcare a right, not a privilege. Together, we can create a healthier world for all.
+            Donate today, and be the change..</p>
+        
+        <h3 style="font-size: 21px;">How Our NGO Can Help::</h3>
+       <ul> 
+        <li><strong>Funding and Donations: </strong> We will raise funds through donors and partnerships to cover medical expenses for those in need</li>
+       <li><strong>Free Healthcare Camps and Consultations:</strong> We will provide free consultations and basic treatments in areas where healthcare access is minimal</li>
+       <li><strong>Partnership with Hospitals: </strong> Collaborating with hospitals to provide discounts or free services to the needy.</li>
+       <li> <strong>Innovative Health Solutions:</strong> Partnering with alternative medicine providers or creating a network of volunteer doctors who offer their services for free or at minimal cost.</li>
+    </ul>
+    </div>
+
+    <div class="content">
+        <h2>How We Make an Impact</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="../images/hos1.png" alt="Financial Support for Treatment"">
+                <h3>Financial Support for Treatment"</h3>
+                <p>Our NGO provides financial assistance for urgent treatments, easing families' pain, offering hope, and giving patients a fighting chance.</p>
+            </div>
+            <div class="card">
+                <img src="../images/img7c.jpg" alt="Preventive Health Programs">
+                <h3>Preventive Health Programs</h3>
+                <p>Our NGO conducts health camps, raises awareness, and promotes early detection to prevent diseases and improve well-being..</p>
+            </div>
+            <div class="card">
+                <img src="../images/image13.png" alt="Life-Saving Support">
+                <h3>Life-Saving Support</h3>
+                <p>Providing financial aid, timely treatments, and emotional support to those battling life-threatening diseases and health crises.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>Help Using Health Technology</h2>
+        <p style="font-size: 21px;">Many people lose their lives because they don’t have the money for timely treatment. Through our NGO, we can make a real difference in their lives by using unique and practical health strategies. Here’s how::</p>
+        <ul>
+            <li><strong>Crowdfunding Platform:</strong>Patients raise funds quickly through verified and transparent donation campaigns.</li>
+            <li><strong>Community Support Network:</strong>Local volunteers and donors assist patients with urgent medical needs.</li>
+            <li> <strong>Treatment Sponsorship Program:</strong>Donors fully sponsor treatments and receive updates on patient progress.</li>
+            <li><strong>Emergency Medical Fund</strong>Immediate financial aid for critical treatments through pre-built donation funds.</li>
+            <li><strong>Preventive Health Camps:</strong>Free health checkups, early diagnosis, and awareness in underserved areas</li>
+        </ul>
+        <p style="font-size: 21px;">Our aim is to save lives by providing timely medical support, financial aid, and creating accessible healthcare solutions for everyone..</p>
+    <div class="health">
+        <img src="../images/healthai.png" height="550px"width="1200px" style="border-radius: 10px;">
+    </div>
+</div>
+    <div class="hero3">
+    </div>
+
+    <div class="content" id="Beggers">
+        <h2>About Our Program: <span style="color: rgb(34, 34, 255); font-size: 26px;">Bright Futures:Empowering Street Children</span></h2>
+        <p style="font-size: 21px;">Child begging is a heartbreaking reality in many parts of the world, including India. According to the 2011 Census, India had 45,296 child beggars, a significant drop from 112,794 in 2001, but the numbers remain alarming. Many children are forced into begging due to dire financial conditions, lack of education, and sometimes exploitation by organized syndicates. These children often face physical abuse, hunger, and illnesses, with little to no hope for a better future. Without intervention, they are trapped in a cycle of poverty and despair, robbing them of a bright and fulfilling life...</p>
+        
+        <h3 style="font-size: 21px;">How Our NGO Can Help:</h3>
+      <ul>  <li><strong>Funding and Donations: </strong> We will raise funds through donors and partnerships to cover medical expenses for those in need</li>
+       <li><strong>Free Healthcare Camps and Consultations:</strong> We will provide free consultations and basic treatments in areas where healthcare access is minimal</li>
+       <li><strong>Partnership with Hospitals: </strong> Collaborating with hospitals to provide discounts or free services to the needy.</li>
+       <li> <strong>Innovative Health Solutions:</strong> Partnering with alternative medicine providers or creating a network of volunteer doctors who offer their services for free or at minimal cost.</li>
+    </ul>
+    </div>
+
+    <div class="content">
+        <h2>How We Make an Impact</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="../images/img5beggar.webp" alt="Rescue and Identification Program">
+                <h3>Rescue and Identification Program"</h3>
+                <p>Partner with local authorities and communities to identify child beggars, conduct surveys, and rescue them from unsafe environments..</p>
+            </div>
+            <div class="card">
+                <img src="../images/imageboks.png" alt="Educational Support">
+                <h3>Educational Support</h3>
+                <p>Bridge Education Programs: Provide basic education to children who have missed school so they can catch up with their peers.</p>
+            </div>
+            <div class="card">
+                <img src="../images/imagedist15.png" alt="Healthcare and Nutrition Programs">
+                <h3>Healthcare and Nutrition Programs</h3>
+                <p>Launch a nutrition program to provide balanced diets, addressing malnutrition and improving overall health..</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>Our Approach to Transforming Lives</h2>
+        <p style="font-size: 21px;">Our NGO is deeply committed to rescuing, rehabilitating, and empowering these children, ensuring they grow up with dignity and hope. Below are the detailed steps we plan to take::</p>
+        <ul>
+            <li><strong>Access to Education:</strong> Set up bridge schools and after-school centers to provide basic and formal education for children who have missed schooling..</li>
+            <li><strong>Skill Development Programs:</strong>Offer vocational training in areas like tailoring, carpentry, computer literacy, and digital skills to prepare them for sustainable employment..</li>
+            <li> <strong>Healthcare Access:</strong>Organize regular health camps and provide free medical treatments, vaccinations, and mental health support for rescued children..</li>
+            <li><strong>Public Awareness Campaigns</strong>Launch campaigns to educate communities about the plight of street children and encourage reporting cases of child exploitation..</li>
+            <li><strong>Preventive Health Camps:</strong>Free health checkups, early diagnosis, and awareness in underserved areas</li>
+        </ul>
+        <p style="font-size: 21px;">Every child deserves dignity and opportunities."
+            We aim to end child begging by providing safety, education, and hope. Your support transforms lives and builds brighter futures.</p>
+    <div class="health">
+        <img src="../images/foodai.webp" height="570px"width="1200px" style="border-radius: 10px;">
+    </div>
+   
+    </div>
+    <footer>
+        <p>Be a part of the change. Your contribution can create endless opportunities and transform lives. <a href="#donate">Donate now!</a></p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
